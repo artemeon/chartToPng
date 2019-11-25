@@ -1,10 +1,9 @@
 {
   "name": "artemeon-chart-renderer",
   "version": "0.0.1",
-  "description": "",
-  "main": "main.js",
+  "description": "node.js script to render a png image from a given chart.js config",
+  "main": "./dist/main.js",
   "dependencies": {
-    "atob": "^2.1.2",
     "chart.js": "^2.8.0",
     "chartjs-node-canvas": "^2.4.1",
     "get-stdin": "^7.0.0",
@@ -13,6 +12,7 @@
     "typescript": "^3.5.3"
   },
   "devDependencies": {
+    "@types/node": "^12.12.12",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
     "eslint": "^5.16.0",
