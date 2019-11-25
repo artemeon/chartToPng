@@ -66,7 +66,6 @@ module.exports = function render(input) {
       console.log("cannot create folder : ", e);
     }
     const base64Data = dataurl.replace(/^data:image\/png;base64,/, "");
-    console.log("output path : ", outputPath);
     fs.writeFile(outputPath + fileName, base64Data, "base64", err => {
       if (err) throw err;
     });
