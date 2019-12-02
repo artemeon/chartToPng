@@ -1,7 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const freshRequire_1 = require("./freshRequire");
-const defaultChartJsFactory = () => freshRequire_1.freshRequire('chart.js');
+'use strict'
+Object.defineProperty(exports, '__esModule', { value: true })
+const defaultChartJsFactory = () => require('chart.js')
 class CanvasRenderService {
     /**
      * Create a new instance of CanvasRenderService.
@@ -13,14 +12,14 @@ class CanvasRenderService {
      * @param chartJsFactory optional provider for chart.js.
      */
     constructor(width, height, chartCallback, type, chartJsFactory) {
-        this._width = width;
-        this._height = height;
-        this._chartJs = (chartJsFactory || defaultChartJsFactory)();
-        this._createCanvas = freshRequire_1.freshRequire('canvas').createCanvas;
-        this._registerFont = freshRequire_1.freshRequire('canvas').registerFont;
-        this._type = type;
+        this._width = width
+        this._height = height
+        this._chartJs = (chartJsFactory || defaultChartJsFactory)()
+        this._createCanvas = require('canvas').createCanvas
+        this._registerFont = require('canvas').registerFont
+        this._type = type
         if (chartCallback) {
-            chartCallback(this._chartJs);
+            chartCallback(this._chartJs)
         }
     }
     /**
@@ -31,20 +30,20 @@ class CanvasRenderService {
      * @param mimeType The image format, `image/png` or `image/jpeg`.
      */
     renderToDataURL(configuration, mimeType = 'image/png') {
-        const chart = this.renderChart(configuration);
+        const chart = this.renderChart(configuration)
         return new Promise((resolve, reject) => {
             if (!chart.canvas) {
-                return reject(new Error('Canvas is null'));
+                return reject(new Error('Canvas is null'))
             }
-            const canvas = chart.canvas;
+            const canvas = chart.canvas
             canvas.toDataURL(mimeType, (error, png) => {
-                chart.destroy();
+                chart.destroy()
                 if (error) {
-                    return reject(error);
+                    return reject(error)
                 }
-                return resolve(png);
-            });
-        });
+                return resolve(png)
+            })
+        })
     }
     /**
      * Render to a data url synchronously.
@@ -54,14 +53,14 @@ class CanvasRenderService {
      * @param mimeType The image format, `image/png` or `image/jpeg`.
      */
     renderToDataURLSync(configuration, mimeType = 'image/png') {
-        const chart = this.renderChart(configuration);
+        const chart = this.renderChart(configuration)
         if (!chart.canvas) {
-            throw new Error('Canvas is null');
+            throw new Error('Canvas is null')
         }
-        const canvas = chart.canvas;
-        chart.destroy();
-        const dataUrl = canvas.toDataURL(mimeType);
-        return dataUrl;
+        const canvas = chart.canvas
+        chart.destroy()
+        const dataUrl = canvas.toDataURL(mimeType)
+        return dataUrl
     }
     /**
      * Render to a buffer.
@@ -71,20 +70,20 @@ class CanvasRenderService {
      * @param mimeType A string indicating the image format. Valid options are `image/png`, `image/jpeg` (if node-canvas was built with JPEG support), `raw` (unencoded ARGB32 data in native-endian byte order, top-to-bottom), `application/pdf` (for PDF canvases) and image/svg+xml (for SVG canvases). Defaults to `image/png` for image canvases, or the corresponding type for PDF or SVG canvas.
      */
     renderToBuffer(configuration, mimeType = 'image/png') {
-        const chart = this.renderChart(configuration);
+        const chart = this.renderChart(configuration)
         return new Promise((resolve, reject) => {
             if (!chart.canvas) {
-                throw new Error('Canvas is null');
+                throw new Error('Canvas is null')
             }
-            const canvas = chart.canvas;
+            const canvas = chart.canvas
             canvas.toBuffer((error, buffer) => {
-                chart.destroy();
+                chart.destroy()
                 if (error) {
-                    return reject(error);
+                    return reject(error)
                 }
-                return resolve(buffer);
-            }, mimeType);
-        });
+                return resolve(buffer)
+            }, mimeType)
+        })
     }
     /**
      * Render to a buffer synchronously.
@@ -94,14 +93,14 @@ class CanvasRenderService {
      * @param mimeType A string indicating the image format. Valid options are `image/png`, `image/jpeg` (if node-canvas was built with JPEG support), `raw` (unencoded ARGB32 data in native-endian byte order, top-to-bottom), `application/pdf` (for PDF canvases) and image/svg+xml (for SVG canvases). Defaults to `image/png` for image canvases, or the corresponding type for PDF or SVG canvas.
      */
     renderToBufferSync(configuration, mimeType = 'image/png') {
-        const chart = this.renderChart(configuration);
+        const chart = this.renderChart(configuration)
         if (!chart.canvas) {
-            throw new Error('Canvas is null');
+            throw new Error('Canvas is null')
         }
-        const canvas = chart.canvas;
-        const buffer = canvas.toBuffer(mimeType);
-        chart.destroy();
-        return buffer;
+        const canvas = chart.canvas
+        const buffer = canvas.toBuffer(mimeType)
+        chart.destroy()
+        return buffer
     }
     /**
      * Render to a stream.
@@ -111,21 +110,21 @@ class CanvasRenderService {
      * @param mimeType A string indicating the image format. Valid options are `image/png`, `image/jpeg` (if node-canvas was built with JPEG support), `application/pdf` (for PDF canvases) and image/svg+xml (for SVG canvases). Defaults to `image/png` for image canvases, or the corresponding type for PDF or SVG canvas.
      */
     renderToStream(configuration, mimeType = 'image/png') {
-        const chart = this.renderChart(configuration);
+        const chart = this.renderChart(configuration)
         if (!chart.canvas) {
-            throw new Error('Canvas is null');
+            throw new Error('Canvas is null')
         }
-        const canvas = chart.canvas;
-        setImmediate(() => chart.destroy());
+        const canvas = chart.canvas
+        setImmediate(() => chart.destroy())
         switch (mimeType) {
             case 'image/png':
-                return canvas.createPNGStream();
+                return canvas.createPNGStream()
             case 'image/jpeg':
-                return canvas.createJPEGStream();
+                return canvas.createJPEGStream()
             case 'application/pdf':
-                return canvas.createPDFStream();
+                return canvas.createPDFStream()
             default:
-                throw new Error(`Un-handled mimeType: ${mimeType}`);
+                throw new Error(`Un-handled mimeType: ${mimeType}`)
         }
     }
     /**
@@ -137,18 +136,18 @@ class CanvasRenderService {
      * registerFont('comicsans.ttf', { family: 'Comic Sans' });
      */
     registerFont(path, options) {
-        this._registerFont(path, options);
+        this._registerFont(path, options)
     }
     renderChart(configuration) {
-        const canvas = this._createCanvas(this._width, this._height, this._type);
-        canvas.style = {};
+        const canvas = this._createCanvas(this._width, this._height, this._type)
+        canvas.style = {}
         // Disable animation (otherwise charts will throw exceptions)
-        configuration.options = configuration.options || {};
-        configuration.options.responsive = false;
-        configuration.options.animation = false;
-        const context = canvas.getContext('2d');
-        return new this._chartJs(context, configuration);
+        configuration.options = configuration.options || {}
+        configuration.options.responsive = false
+        configuration.options.animation = false
+        const context = canvas.getContext('2d')
+        return new this._chartJs(context, configuration)
     }
 }
-exports.CanvasRenderService = CanvasRenderService;
+exports.CanvasRenderService = CanvasRenderService
 //# sourceMappingURL=index.js.map
