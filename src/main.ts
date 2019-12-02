@@ -1,4 +1,5 @@
-const { CanvasRenderService } = require("chartjs-node-canvas");
+// const { CanvasRenderService } = require("./chartjs-node-canvas/src/index");
+import { CanvasRenderService } from "./chartjs-node-canvas/src/index";
 const getStdin = require("get-stdin");
 const fs = require("fs");
 const readline = require("readline");
