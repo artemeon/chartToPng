@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('path')
 const TerserPlugin = require('terser-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = async env => {
     return {
@@ -12,6 +13,13 @@ module.exports = async env => {
             filename: './[name].js',
             path: path.resolve(__dirname, 'dist')
         },
+        plugins: [
+            new CopyPlugin([{
+                from: 'node_modules/canvas/build/Release/canvas.node',
+                to: './'
+            }])
+        ],
+        externals: './canvas',
         target: 'node',
     	performance: {
             hints: false 

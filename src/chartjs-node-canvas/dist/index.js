@@ -15,8 +15,8 @@ class CanvasRenderService {
         this._width = width
         this._height = height
         this._chartJs = (chartJsFactory || defaultChartJsFactory)()
-        this._createCanvas = require('canvas').createCanvas
-        this._registerFont = require('canvas').registerFont
+        this._createCanvas = require('../../canvas/index').createCanvas
+        this._registerFont = require('../../canvas/index').registerFont
         this._type = type
         if (chartCallback) {
             chartCallback(this._chartJs)
