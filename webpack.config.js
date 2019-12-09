@@ -13,13 +13,13 @@ module.exports = async env => {
             filename: './[name].js',
             path: path.resolve(__dirname, 'dist')
         },
-        plugins: [
-            new CopyPlugin([{
-                from: 'node_modules/canvas/build/Release/canvas.node',
-                to: './'
-            }])
-        ],
-        externals: './canvas',
+        // plugins: [
+        //     new CopyPlugin([{
+        //         from: 'node_modules/canvas/build/Release/canvas.node',
+        //         to: './'
+        //     }])
+        // ],
+        // externals: './canvas',
         target: 'node',
     	performance: {
             hints: false 
@@ -28,7 +28,7 @@ module.exports = async env => {
             rules: [
                 {
                     test: /\.node$/,
-                    use: 'node-loader'
+                    use: 'native-ext-loader'
                 },
                 {
                     test: /\.tsx?$/,
