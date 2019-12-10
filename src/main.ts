@@ -87,7 +87,6 @@ function dataURLtoFile(dataurl, outputPath, fileName): void {
             height,
             chartCallback
         )
-        
         const dataUrl = await canvasRenderService.renderToDataURL(configuration)
         const filename = 'graph-' + randId + '.png'
         const outputPath = input.outputPath + '/hsbcreports/'

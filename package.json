@@ -20,6 +20,7 @@
     "copy-webpack-plugin": "^5.1.0",
     "eslint": "^5.16.0",
     "eslint-plugin-node": "^9.1.0",
+    "file-loader": "^5.0.2",
     "native-ext-loader": "^2.3.0",
     "node-loader": "^0.6.0",
     "terser-webpack-plugin": "^2.2.1",
