@@ -1,7 +1,6 @@
 import { Readable } from 'stream'
 import { Chart as ChartJS, ChartConfiguration } from 'chart.js'
-import { createCanvas, registerFont } from '../../canvas/index.js'
-// import { freshRequire } from "./freshRequire";
+import { createCanvas, registerFont } from 'canvas'
 
 export type ChartCallback = (chartJS: typeof ChartJS) => void | Promise<void>;
 export type CanvasType = 'pdf' | 'svg';
@@ -11,8 +10,6 @@ export type MimeType =
   | 'application/pdf'
   | 'image/svg+xml';
 
-// const defaultChartJsFactory: () => typeof ChartJS = () =>
-//   freshRequire("chart.js");
 const defaultChartJsFactory = require('chart.js')
 
 // https://github.com/Automattic/node-canvas#non-standard-apis
