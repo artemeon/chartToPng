@@ -87,6 +87,7 @@ function dataURLtoFile(dataurl, outputPath, fileName): void {
             height,
             chartCallback
         )
+        canvasRenderService.registerFont('./font/arial.ttf', { family: 'arial' })
         const dataUrl = await canvasRenderService.renderToDataURL(configuration)
         const filename = 'graph-' + randId + '.png'
         const outputPath = input.outputPath + '/hsbcreports/'
