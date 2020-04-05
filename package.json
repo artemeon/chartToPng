@@ -7,7 +7,7 @@
     "chart.js": "^2.8.0",
     "chartjs-node-canvas": "^2.4.1",
     "get-stdin": "^7.0.0",
-    "minimist": "^1.2.2",
+    "minimist": "^1.2.3",
     "ts-node-dev": "^1.0.0-pre.40",
     "typescript": "^3.5.3"
   },
