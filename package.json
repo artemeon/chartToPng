@@ -4,7 +4,7 @@
   "description": "node.js script to render a png image from a given chart.js config",
   "main": "./dist/main.js",
   "dependencies": {
-    "chart.js": "^2.8.0",
+    "chart.js": "^2.9.4",
     "chartjs-node-canvas": "^2.4.1",
     "get-stdin": "^7.0.0",
     "minimist": "^1.2.3",
