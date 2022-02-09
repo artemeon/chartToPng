@@ -1,0 +1,6 @@
+version: '3.7'
+services:
+  node:
+    build: .
+    volumes:
+      - ./dist_linux:/app/dist
