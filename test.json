@@ -1,0 +1,222 @@
+{
+  "chart": {
+    "type": "Kajona\\Chartjs\\System\\GraphChartjs",
+    "data": {
+      "type": "bar",
+      "options": {
+        "plugins": {
+          "datalabels": {
+            "display": false
+          }
+        },
+        "title": {
+          "display": false,
+          "fontColor": "#000000",
+          "fontSize": 16,
+          "fontFamily": "arial"
+        },
+        "scales": {
+          "xAxes": [
+            {
+              "ticks": {
+                "beginAtZero": true,
+                "fontColor": "#000000",
+                "fontSize": 16,
+                "autoSkip": true,
+                "maxTicksLimit": 12,
+                "fontFamily": "arial"
+              },
+              "scaleLabel": {
+                "fontColor": "#000000",
+                "fontSize": 16,
+                "fontFamily": "arial"
+              }
+            }
+          ],
+          "yAxes": [
+            {
+              "id": "defaultYID",
+              "ticks": {
+                "beginAtZero": true,
+                "fontColor": "#000000",
+                "fontSize": 16,
+                "fontFamily": "arial"
+              },
+              "scaleLabel": {
+                "fontColor": "#000000",
+                "fontSize": 16,
+                "display": true,
+                "labelString": "Transaktionen",
+                "fontFamily": "arial"
+              }
+            },
+            {
+              "ticks": {
+                "fontColor": "#000000",
+                "fontSize": 16,
+                "fontFamily": "arial"
+              },
+              "scaleLabel": {
+                "fontColor": "#000000",
+                "fontSize": 16,
+                "fontFamily": "arial"
+              },
+              "display": false
+            }
+          ]
+        },
+        "legend": {
+          "labels": {
+            "fontColor": "#000000",
+            "fontSize": 16,
+            "fontFamily": "arial"
+          },
+          "display": true
+        }
+      },
+      "defaults": {
+        "global": {
+          "defaultFontSize": 10,
+          "defaultFontFamily": "\"Open Sans\",\"Helvetica Neue\",\"Helvetica\",\"Arial\",\"sans-serif\"",
+          "elements": {
+            "line": {
+              "fill": false,
+              "lineTension": 0.9
+            }
+          },
+          "tooltips": {
+            "cornerRadius": 0,
+            "backgroundColor": "rgba(255,255,255,0.9)",
+            "borderWidth": 0.5,
+            "borderColor": "rgba(0,0,0,0.8)",
+            "bodyFontColor": "#000",
+            "titleFontColor": "#000"
+          },
+          "legend": {
+            "labels": {
+              "boxWidth": 12
+            }
+          },
+          "maintainAspectRatio": false
+        }
+      },
+      "data": {
+        "datasets": [
+          {
+            "dataPoints": [
+              {
+                "floatvalue": 0,
+                "actionhandlervalue": null,
+                "actionhandler": null
+              },
+              {
+                "floatvalue": 0,
+                "actionhandlervalue": null,
+                "actionhandler": null
+              },
+              {
+                "floatvalue": 0,
+                "actionhandlervalue": null,
+                "actionhandler": null
+              },
+              {
+                "floatvalue": 0,
+                "actionhandlervalue": null,
+                "actionhandler": null
+              },
+              {
+                "floatvalue": 0,
+                "actionhandlervalue": null,
+                "actionhandler": null
+              },
+              {
+                "floatvalue": 0,
+                "actionhandlervalue": null,
+                "actionhandler": null
+              },
+              {
+                "floatvalue": 0,
+                "actionhandlervalue": null,
+                "actionhandler": null
+              },
+              {
+                "floatvalue": 0,
+                "actionhandlervalue": null,
+                "actionhandler": null
+              },
+              {
+                "floatvalue": 0,
+                "actionhandlervalue": null,
+                "actionhandler": null
+              },
+              {
+                "floatvalue": 0,
+                "actionhandlervalue": null,
+                "actionhandler": null
+              },
+              {
+                "floatvalue": 0,
+                "actionhandlervalue": null,
+                "actionhandler": null
+              },
+              {
+                "floatvalue": 0,
+                "actionhandlervalue": null,
+                "actionhandler": null
+              }
+            ],
+            "type": null,
+            "label": "Transaktionen",
+            "data": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "backgroundColor": "#CB9833",
+            "borderColor": "#CB9833",
+            "borderWidth": 1,
+            "yAxisID": "defaultYID",
+            "datalabels": {
+              "display": false
+            },
+            "lineTension": 0.2,
+            "spanGaps": false,
+            "fill": false
+          }
+        ],
+        "labels": [
+          "2021 02",
+          "2021 03",
+          "2021 04",
+          "2021 05",
+          "2021 06",
+          "2021 07",
+          "2021 08",
+          "2021 09",
+          "2021 10",
+          "2021 11",
+          "2021 12",
+          "2022 01"
+        ]
+      }
+    },
+    "options": {
+      "addThousandSeparator": true
+    },
+    "colors": [
+      "#CB9833"
+    ],
+    "width": 1020,
+    "height": 510
+  },
+  "outputPath": "/app"
+}
